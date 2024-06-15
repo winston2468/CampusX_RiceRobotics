@@ -227,22 +227,19 @@ body {
   gap: 2rem;
 }
 
-.container > .content > .intro > .video-overlay > .buttons > .contact-button {
+.container > .content > .intro > .video-overlay > .buttons > .left-button {
   cursor: pointer;
   display: inline-block;
   text-align: center;
   white-space: nowrap;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.17648;
-  font-weight: 400;
+  font-weight: 800;
   letter-spacing: -0.022em;
   border-style: solid;
   border-width: 1px;
   min-width: 30px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding: 20px 30px;
   border-radius: 980px;
   background: #2997ff;
   color: #fff;
@@ -257,7 +254,7 @@ body {
   > .intro
   > .video-overlay
   > .buttons
-  > .contact-button:hover {
+  > .left-button:hover {
   background-color: #0077ed;
 }
 
@@ -266,16 +263,16 @@ body {
   > .intro
   > .video-overlay
   > .buttons
-  > .contact-button:active {
+  > .left-button:active {
   background-color: #006edb;
 }
 
-.container > .content > .intro > .video-overlay > .buttons > .enroll-button {
+.container > .content > .intro > .video-overlay > .buttons > .right-button {
   background: rgba(0, 0, 0, 0);
   text-decoration: none;
   font-family: Helvetica, Arial, sans-serif;
   transition-duration: 0.4s;
-  border-color: #2997ff;
+  border-color: #ffffff;
 }
 
 .container
@@ -283,7 +280,7 @@ body {
   > .intro
   > .video-overlay
   > .buttons
-  > .enroll-button:hover {
+  > .right-button:hover {
   box-shadow: none;
   background-color: #2997ff;
 }
@@ -499,6 +496,8 @@ body {
   margin-left: 1rem;
   border-radius: 10px;
   padding: 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .container > .content > .about-us-content > * > .about-us-text > h2 {
@@ -1286,8 +1285,11 @@ body {
   .container > .content > .our-vision-brief > .our-vision-container > h2 {
     padding-top: 0;
   }
+
   .container > .content > .our-vision-brief > .our-vision-container > img {
     width: 100%;
+    height: auto;
+    object-fit: scale-down;
   }
 
   .container > .content > .our-vision-brief > .our-vision-container > p {
