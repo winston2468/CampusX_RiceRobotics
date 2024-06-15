@@ -227,7 +227,7 @@ body {
   gap: 2rem;
 }
 
-.container > .content > .intro > .video-overlay > .buttons > .right-button {
+.container > .content > .intro > .video-overlay > .buttons > .left-button {
   cursor: pointer;
   display: inline-block;
   text-align: center;
@@ -254,7 +254,7 @@ body {
   > .intro
   > .video-overlay
   > .buttons
-  > .right-button:hover {
+  > .left-button:hover {
   background-color: #0077ed;
 }
 
@@ -263,16 +263,16 @@ body {
   > .intro
   > .video-overlay
   > .buttons
-  > .right-button:active {
+  > .left-button:active {
   background-color: #006edb;
 }
 
-.container > .content > .intro > .video-overlay > .buttons > .left-button {
+.container > .content > .intro > .video-overlay > .buttons > .right-button {
   background: rgba(0, 0, 0, 0);
   text-decoration: none;
   font-family: Helvetica, Arial, sans-serif;
   transition-duration: 0.4s;
-  border-color: #2997ff;
+  border-color: #ffffff;
 }
 
 .container
@@ -280,7 +280,7 @@ body {
   > .intro
   > .video-overlay
   > .buttons
-  > .left-button:hover {
+  > .right-button:hover {
   box-shadow: none;
   background-color: #2997ff;
 }
