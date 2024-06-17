@@ -43,24 +43,15 @@ element.addEventListener("scroll", () => {
 var intro_video = document.getElementById("intro_video");
 var map_canvas = document.getElementById("map-canvas");
 var empty_scroll = document.getElementById("empty-scroll");
-var map_empty_box = document.getElementById("map-empty-box");
 var map_fallback = document.getElementById("map-fallback");
-
 var promise = intro_video.play();
 
 if (promise !== undefined) {
-  promise
-    .catch((error) => {
-      if (error.name === "NotAllowedError") {
-        console.log("Low Power Mode Active");
-        map_canvas.remove();
-        empty_scroll.remove();
-        map_empty_box.remove();
-        map_fallback.style.display = "block";
-        map_fallback.style.width = "100%";
-        map_fallback.style.height = "auto";
-        map_fallback.style.objectFit = "scale-down";
-      }
-    })
-    .then(() => {});
+  promise.catch((error) => {
+    if (error.name === "NotAllowedError") {
+      map_canvas.remove();
+      empty_scroll.remove();
+      map_fallback.style.display = "block";
+    }
+  });
 }
