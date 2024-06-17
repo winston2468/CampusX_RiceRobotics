@@ -1,4 +1,4 @@
-const canvas = document.getElementById("map-container");
+const canvas = document.getElementById("map-canvas");
 const context = canvas.getContext("2d");
 
 canvas.width = 2772;
@@ -8,7 +8,7 @@ canvas.height = 2158;
 
 const currentFrame = (index) =>
   `assets/images/map/${index.toString().padStart(4, "0")}.jpg`;
-const frameCount = 54;
+const frameCount = 57;
 const images = [];
 
 const preloadImages = () => {
@@ -36,9 +36,28 @@ element.addEventListener("scroll", () => {
     frameCount - 1,
     Math.floor(scrollFraction * frameCount)
   );
-  console.log("FrameIndex", frameIndex);
   if (frameIndex < frameCount)
-    requestAnimationFrame(() =>
-      context.drawImage(images[frameIndex + 1], 0, 0)
-    );
+    requestAnimationFrame(() => context.drawImage(images[frameIndex], 0, 0));
 });
+
+var intro_video = document.getElementById("intro_video");
+var map_canvas = document.getElementById("map-canvas");
+var empty_scroll = document.getElementById("empty-scroll");
+var map_empty_box = document.getElementById("map-empty-box");
+var map_fallback = document.getElementById("map-fallback");
+
+var promise = intro_video.play();
+
+if (promise !== undefined) {
+  promise
+    .catch((error) => {
+      if (error.name === "NotAllowedError") {
+        console.log("Low Power Mode Active");
+        map_canvas.remove();
+        empty_scroll.remove();
+        map_empty_box.remove();
+        map_fallback.style.display = "block";
+      }
+    })
+    .then(() => {});
+}

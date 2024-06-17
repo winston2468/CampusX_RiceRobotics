@@ -357,6 +357,14 @@ body {
   z-index: 50;
 }
 
+.container
+  > .content
+  > .intro
+  > .vid-container
+  > .intro_video::-webkit-media-controls {
+  display: none !important;
+}
+
 .container > .content > .intro > .vid-container::after {
   content: "";
   position: absolute;
@@ -1307,7 +1315,7 @@ body {
   background-color: #ffffff;
 }
 
-.map-brief > .map-container {
+.map-brief > .map-canvas {
   position: sticky;
   top: 1vw;
   max-height: 90vh;
@@ -1331,6 +1339,13 @@ body {
   touch-action: none;
 }
 
+.map-brief > .map-fallback {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: scale-down;
+}
+
 @media screen and (max-width: 1440px) {
   .map-brief {
     height: 70vh;
@@ -1344,7 +1359,7 @@ body {
     top: 0%;
   }
 
-  .map-brief > .map-container {
+  .map-brief > .map-canvas {
     top: 0vh;
     height: fit-content;
     width: fit-content;
