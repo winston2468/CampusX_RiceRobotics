@@ -365,6 +365,22 @@ body {
   display: none !important;
 }
 
+.container
+  > .content
+  > .intro
+  > .vid-container
+  > .intro_video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.container
+  > .content
+  > .intro
+  > .vid-container
+  > .intro_video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+}
+
 .container > .content > .intro > .vid-container::after {
   content: "";
   position: absolute;

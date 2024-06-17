@@ -57,6 +57,9 @@ if (promise !== undefined) {
         empty_scroll.remove();
         map_empty_box.remove();
         map_fallback.style.display = "block";
+        map_fallback.style.width = "100%";
+        map_fallback.style.height = "auto";
+        map_fallback.style.objectFit = "scale-down";
       }
     })
     .then(() => {});
