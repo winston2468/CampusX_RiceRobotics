@@ -40,7 +40,8 @@ element.addEventListener("scroll", () => {
     requestAnimationFrame(() => context.drawImage(images[frameIndex], 0, 0));
 });
 
-var intro_video = document.getElementById("intro_video");
+var intro_video = document.getElementById("intro-video");
+var intro_fallback = document.getElementById("intro-fallback");
 var map_canvas = document.getElementById("map-canvas");
 var empty_scroll = document.getElementById("empty-scroll");
 var map_fallback = document.getElementById("map-fallback");
@@ -49,6 +50,9 @@ var promise = intro_video.play();
 if (promise !== undefined) {
   promise.catch((error) => {
     if (error.name === "NotAllowedError") {
+      intro_video.remove();
+      intro_fallback.style.display = "block";
+
       map_canvas.remove();
       empty_scroll.remove();
       map_fallback.style.display = "block";
