@@ -164,10 +164,16 @@
                 loop
                 playsinline
                 data-inline
-                class="intro_video"
+                class="intro-video"
+                id="intro-video"
               >
                 <source src="assets/video/intro.mp4" type="video/mp4" />
               </video>
+              <img
+                src="assets/images/intro/intro-fallback.jpg"
+                class="intro-fallback"
+                id="intro-fallback"
+              />
             </div>
           </div>
 
@@ -209,11 +215,9 @@
             <div style="padding-top: 10vh"></div>
             <div class="about-us-container container-flex-center-wrap">
               <img
-                src="assets/images/about-us-content/rice-robotics-logo.png"
+                src="assets/images/about-us/rice-robotics-logo.png"
                 sizes
-                srcset="
-                  assets/images/about-us-content/rice-robotics-logo@2x.png 2x
-                "
+                srcset="assets/images/about-us/rice-robotics-logo@2x.png 2x"
                 alt="rice robotics logo"
               />
               <div class="about-us-text">
@@ -741,14 +745,18 @@
             </div>
           </div>
 
-          <div class="map-empty-box">&nbsp;</div>
           <div class="map-brief" id="map">
-            <canvas class="map-container" id="map-container"> </canvas>
-            <div class="empty-scroll">&nbsp;</div>
+            <canvas class="map-canvas" id="map-canvas"> </canvas>
+            <div class="empty-scroll" id="empty-scroll">&nbsp;</div>
+            <img
+              src="assets/images/map/0056.jpg"
+              class="map-fallback"
+              id="map-fallback"
+            />
           </div>
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="js/img_animation.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

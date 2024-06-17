@@ -223,6 +223,8 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-around;
+  margin: 1rem;
   flex-wrap: wrap;
   gap: 2rem;
 }
@@ -344,7 +346,7 @@ body {
   height: fit-content;
 }
 
-.container > .content > .intro > .vid-container > .intro_video {
+.container > .content > .intro > .vid-container > .intro-video {
   top: 0;
   left: 0;
   margin: 0;
@@ -354,6 +356,19 @@ body {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  z-index: 50;
+}
+
+.container
+  > .content
+  > .intro
+  > .vid-container
+  > .intro-fallback {
+  display: none;
+  object-fit: cover;
+  left: -50%;
+  width: 100vw;
+  height: 100vh;  
   z-index: 50;
 }
 
@@ -376,15 +391,10 @@ body {
     height: fit-content;
   }
 
-  .container > .content > .intro > .vid-container > .intro_video {
-    top: 0px;
-
+  .container > .content > .intro > .vid-container > .intro-video {
     left: -50%;
     min-width: auto;
     min-height: auto;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
   }
 }
 
@@ -1305,9 +1315,10 @@ body {
   width: auto;
   max-height: 100vh;
   background-color: #ffffff;
+  justify-content: center;
 }
 
-.map-brief > .map-container {
+.map-brief > .map-canvas {
   position: sticky;
   top: 1vw;
   max-height: 90vh;
@@ -1322,35 +1333,32 @@ body {
   height: 300vh;
 }
 
-.map-empty-box {
+.map-fallback {
   display: none;
-  visibility: hidden;
-  height: 0;
-  overflow: hidden;
-  pointer-events: none;
-  touch-action: none;
+  width: 80vw;
+  height: auto;
+  max-height: 100vh;
+  object-fit: scale-down;
 }
 
 @media screen and (max-width: 1440px) {
   .map-brief {
-    height: 70vh;
-  }
-  .map-empty-box {
-    display: block;
-    visibility: visible;
-    height: 30vh;
-    width: auto;
-    left: 0%;
-    top: 0%;
+    height: 100vh;
   }
 
-  .map-brief > .map-container {
+  .map-brief > .map-canvas {
     top: 0vh;
-    height: fit-content;
-    width: fit-content;
+    height: auto;
+    width: 100vw;
     max-height: 100vh;
     max-width: auto;
     left: 1%;
     z-index: 75;
+    object-fit: scale-down;
+    overflow-y: visible;
+  }
+
+  .map-fallback {
+    width: 100vw;
   }
 }
